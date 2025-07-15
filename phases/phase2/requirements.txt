@@ -21,5 +21,6 @@ python-dotenv>=0.19.0  # Environment management
 aiohttp>=3.8.1  # Async HTTP client for LLM calls
 tenacity>=8.0.1  # Retry logic for API calls
 transformers>=4.30.0  # Local fallback model support
+torch>=2.0.0  # PyTorch for local model inference
 pytest-asyncio>=0.21.0  # For async test support
 aioresponses>=0.7.4  # For mocking async HTTP requests in tests
