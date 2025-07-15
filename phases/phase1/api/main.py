@@ -16,12 +16,12 @@ def get_api_key(api_key: str = Query(..., description="Your API key")):
         )
     return api_key
 
-from ingestion import InputValidator
-from intent_classifier import IntentClassifier
-from sentiment_analyzer import SentimentAnalyzer
-from keyword_extractor import KeywordExtractor
-from response_formatter import ResponseFormatter
-from logger import CallChemyLogger
+from phases.phase1.ingestion import InputValidator
+from phases.phase1.intent_classifier import IntentClassifier
+from phases.phase1.sentiment_analyzer import SentimentAnalyzer
+from phases.phase1.keyword_extractor import KeywordExtractor
+from phases.phase1.response_formatter import ResponseFormatter
+from phases.phase1.logger import CallChemyLogger
 from datetime import datetime, timezone
 
 

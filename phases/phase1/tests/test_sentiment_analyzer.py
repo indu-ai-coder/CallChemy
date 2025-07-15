@@ -1,5 +1,5 @@
 import pytest
-from sentiment_analyzer import SentimentAnalyzer
+from phases.phase1.sentiment_analyzer import SentimentAnalyzer
 
 @pytest.fixture
 def analyzer():

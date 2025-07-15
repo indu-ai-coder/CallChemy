@@ -1,5 +1,5 @@
 import pytest
-from ingestion import InputValidator
+from phases.phase1.ingestion import InputValidator
 
 def test_valid_input():
     validator = InputValidator()

@@ -17,10 +17,12 @@ class InputValidator:
             validated = Transcript(**data)
             
             # Validate each utterance
+            idx = 0
             for idx, utterance in enumerate(validated.transcript):
                 Utterance(**utterance)
                 
             return validated.model_dump()  # Updated to use model_dump() instead of dict()
             
         except Exception as e:
-            raise ValueError(f"Validation error at index {idx}: {str(e)}")
+            idx_info = f" at index {idx}" if 'idx' in locals() else ""
+            raise ValueError(f"Validation error{idx_info}: {str(e)}")

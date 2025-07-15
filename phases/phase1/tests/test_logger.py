@@ -2,7 +2,7 @@ import pytest
 from pathlib import Path
 import json
 from datetime import datetime, timedelta, timezone
-from logger import CallChemyLogger
+from phases.phase1.logger import CallChemyLogger
 
 @pytest.fixture
 def temp_log_dir(tmp_path):

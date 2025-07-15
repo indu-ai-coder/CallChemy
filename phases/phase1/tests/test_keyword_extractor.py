@@ -1,5 +1,5 @@
 import pytest
-from keyword_extractor import KeywordExtractor
+from phases.phase1.keyword_extractor import KeywordExtractor
 
 @pytest.fixture
 def extractor():

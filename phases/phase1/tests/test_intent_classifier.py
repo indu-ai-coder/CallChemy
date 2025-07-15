@@ -1,5 +1,5 @@
 import pytest
-from intent_classifier import IntentClassifier
+from phases.phase1.intent_classifier import IntentClassifier
 
 @pytest.fixture
 def classifier():

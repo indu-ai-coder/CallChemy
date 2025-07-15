@@ -1,5 +1,5 @@
 import pytest
-from response_formatter import ResponseFormatter
+from phases.phase1.response_formatter import ResponseFormatter
 from datetime import datetime
 
 @pytest.fixture

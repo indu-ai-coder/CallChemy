@@ -36,17 +36,30 @@ source venv/bin/activate  # On Windows: venv\Scripts\activate
 
 3. Install dependencies:
 ```bash
-pip install -r requirements.txt
+pip install -r phases/phase1/requirements.txt
 ```
 
 ### Running the API
 
 Start the FastAPI server:
 ```bash
-uvicorn api.main:app --reload
+uvicorn phases.phase1.api.main:app --reload
 ```
 
 The API will be available at `http://localhost:8000`
+
+If you get an "Address already in use" error, you can either:
+1. Kill the existing uvicorn process:
+```bash
+pkill -f uvicorn
+```
+
+2. Or use a different port:
+```bash
+uvicorn phases.phase1.api.main:app --reload --port 8080
+```
+
+To properly stop the server, press CTRL+C in the terminal where it's running.
 
 ### Testing the API
 
@@ -99,25 +112,25 @@ To run the automated test suite:
 
 ```bash
 # Run all tests
-pytest
+pytest phases/phase1/tests/
 
 # Run tests with coverage report
-pytest --cov
+pytest phases/phase1/tests/ --cov
 
 # Run specific test file
-pytest tests/test_api.py
+pytest phases/phase1/tests/test_api.py
 
 # Run tests in verbose mode
-pytest -v
+pytest phases/phase1/tests/ -v
 
 # Run tests for a specific component
-pytest tests/test_intent_classifier.py -v
+pytest phases/phase1/tests/test_intent_classifier.py -v
 
 # Run tests matching a specific name pattern
-pytest -k "test_sentiment"
+pytest phases/phase1/tests/ -k "test_sentiment"
 
 # Generate HTML coverage report
-pytest --cov --cov-report=html
+pytest phases/phase1/tests/ --cov --cov-report=html
 ```
 
 The test suite includes:
@@ -166,7 +179,7 @@ The test suite includes:
 5. **Performance Tests**:
    ```bash
    # Run performance tests
-   pytest tests/test_api.py -k "test_performance" --durations=0
+   pytest phases/phase1/tests/test_api.py -k "test_performance" --durations=0
    ```
 
 6. **Coverage Requirements**:
@@ -271,21 +284,23 @@ Note: In production, use a secure API key and set it through environment variabl
 
 ```
 CallChemy/
-├── api/
-│   ├── __init__.py
-│   ├── main.py          # FastAPI application and endpoints
-│   └── models.py        # Pydantic models for request/response
-├── tests/
-│   ├── __init__.py
-│   ├── test_api.py
-│   └── ...
-├── ingestion.py         # Input validation
-├── intent_classifier.py  # Intent classification logic
-├── sentiment_analyzer.py # Sentiment analysis
-├── keyword_extractor.py # Keyword extraction
-├── response_formatter.py # Response formatting
-├── logger.py            # Request logging
-└── requirements.txt     # Project dependencies
+└── phases/
+    └── phase1/
+        ├── api/
+        │   ├── __init__.py
+        │   ├── main.py          # FastAPI application and endpoints
+        │   └── models.py        # Pydantic models for request/response
+        ├── tests/
+        │   ├── __init__.py
+        │   ├── test_api.py
+        │   └── ...
+        ├── ingestion.py         # Input validation
+        ├── intent_classifier.py  # Intent classification logic
+        ├── sentiment_analyzer.py # Sentiment analysis
+        ├── keyword_extractor.py # Keyword extraction
+        ├── response_formatter.py # Response formatting
+        ├── logger.py            # Request logging
+        └── requirements.txt     # Project dependencies
 ```
 
 ## Error Handling
@@ -316,4 +331,4 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 
 ## Contact
 
-Created by [Rihaan-coder](https://github.com/Rihaan-coder)
+Created by [indu-ai-coder](https://github.com/indu-ai-coder)
