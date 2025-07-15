@@ -1,100 +1,111 @@
-# CallChemy 🧪
 
-A powerful conversation analysis platform that turns customer service interactions into actionable insights through advanced NLP.
+# 📞 CallChemy – AI-powered Call Summary and Quality Analyzer
 
-![License](https://img.shields.io/badge/license-MIT-blue.svg)
-![Python Version](https://img.shields.io/badge/python-3.12+-blue.svg)
-![FastAPI](https://img.shields.io/badge/FastAPI-latest-green.svg)
-
-## 🌟 Overview
-
-CallChemy is an intelligent conversation analysis API that helps businesses understand and improve their customer service interactions. Using state-of-the-art natural language processing, it extracts meaningful insights from conversations, including:
-
-- Intent Classification
-- Sentiment Analysis
-- Keyword Extraction
-- Conversation Summarization
-
-## 📚 Project Structure
-
-CallChemy is organized into phases, each building upon the previous:
-
-### [Phase 1](/phases/phase1/) - Core API
-- FastAPI-based REST API
-- Basic NLP pipeline
-- Input validation
-- Request logging
-- [Detailed Documentation](/phases/phase1/README.md)
-
-*Future phases will be added as the project evolves.*
-
-## 🚀 Quick Start
-
-1. **Prerequisites**
-   - Python 3.12+
-   - pip (Python package installer)
-
-2. **Installation**
-   ```bash
-   git clone https://github.com/indu-ai-coder/CallChemy.git
-   cd CallChemy
-   python -m venv venv
-   source venv/bin/activate  # On Windows: venv\Scripts\activate
-   pip install -r phases/phase1/requirements.txt
-   ```
-
-3. **Run the API**
-   ```bash
-   uvicorn phases.phase1.api.main:app --reload
-   ```
-
-   Visit `http://localhost:8000/docs` for interactive API documentation.
-
-## 💡 Key Features
-
-- 🎯 **Smart Intent Detection**: Accurately identifies customer needs and conversation goals
-- 😊 **Sentiment Tracking**: Monitors emotional tone and satisfaction levels
-- 🔑 **Key Topic Extraction**: Identifies important subjects and action items
-- 📊 **Structured Insights**: Converts raw conversations into actionable data
-- ⚡ **High Performance**: Built for speed and scalability
-- 🔒 **Robust Validation**: Comprehensive input validation and error handling
-
-## 🛠️ Development
-
-Each phase has its own test suite and documentation. See individual phase READMEs for detailed development guidelines.
-
-```bash
-# Run tests for current phase
-pytest phases/phase1/tests/
-
-# Run with coverage
-pytest phases/phase1/tests/ --cov
-```
-
-## 📖 Documentation
-
-- [Phase 1 Documentation](/phases/phase1/README.md)
-- API Documentation (when server is running):
-  - Swagger UI: `http://localhost:8000/docs`
-  - ReDoc: `http://localhost:8000/redoc`
-
-## 🤝 Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
-
-1. Fork the repository
-2. Create your feature branch
-3. Commit your changes
-4. Push to the branch
-5. Create a Pull Request
-
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 👥 Contact
-
-Created by [indu-ai-coder](https://github.com/indu-ai-coder)
+**CallChemy** is an LLM-powered backend system designed to analyze transcribed customer-agent conversations and extract actionable insights — such as intent, sentiment, and call summaries. The project is built in modular phases to allow experimentation and iterative improvement.
 
 ---
-⭐ Star us on GitHub — it motivates us to keep improving!
+
+## 🧠 What Can CallChemy Do?
+
+Given a transcribed audio conversation (e.g., from a call center), CallChemy can:
+- Detect customer **intents** (e.g., complaint, inquiry, feedback)
+- Analyze **sentiment** (positive, negative, neutral)
+- Extract **keywords** (products, dates, financial terms)
+- Generate a **structured analysis report**
+- (Phase 2) Generate a summary and enable **interactive dashboarding**
+
+---
+
+## 🧩 Project Structure
+
+```
+CallChemy/
+├── phases/
+│   ├── phase1/         # Static analysis via API (intent, sentiment, keywords)
+│   └── phase2/         # (Upcoming) Summary generation, dashboard integration
+├── docs/               # Architecture, screenshots, planning artifacts
+├── README.md           # You are here
+└── prompt_plan.md      # Spec-first development tracker
+```
+
+📌 Each phase has its own `README.md` with:
+- Setup instructions  
+- API examples  
+- Expected input/output  
+- Future TODOs
+
+---
+
+## ⚙️ Tech Stack
+
+| Area | Tools |
+|------|-------|
+| 💬 LLMs | Claude, OpenAI (Optional), open-source LLMs (planned in Phase 2) |
+| 🧠 Prompt Workflow | Specification-grounded development (`idea.md`, `spec.md`, `prompt_plan.md`) |
+| 🧪 Backend | FastAPI |
+| ⚙️ Dev Tools | GitHub Copilot, Claude, Postman |
+| ☁️ Future (optional) | Streamlit, LangChain, Hugging Face Hub |
+
+---
+
+## 🚀 Getting Started
+
+### 🛠 Requirements
+- Python 3.10+
+- `pip install -r requirements.txt` (per phase folder)
+- (Optional) Claude or OpenAI keys for Phase 2
+
+### ▶️ Run Phase 1 API Locally
+
+```bash
+cd phases/phase1
+uvicorn main:app --reload
+```
+
+Then test the `/analyze` endpoint using Postman or curl.
+
+---
+
+## 📖 Development Approach
+
+This project uses a **spec-driven, prompt-first development methodology** inspired by the [Unstract](https://unstract.com/blog/specification-grounding-vibe-coding/) framework:
+
+- Define the vision → `idea.md`
+- Lock down inputs/outputs → `spec.md`
+- Break dev into steps → `prompt_plan.md`
+- Guide the loop with Claude → `CLAUDE.md`
+
+This makes the AI + API build process predictable, repeatable, and testable.
+
+---
+
+## ✍️ Author
+
+**Indumathi Pandiyan**  
+AI Enthusiast | Techpreneur | Conversational AI Architect  
+[LinkedIn](https://www.linkedin.com/in/indumathi-pandiyan/) | [Medium](https://medium.com/@indukishen)
+
+---
+
+## ⭐️ Acknowledgments
+
+- [Unstract](https://github.com/zipstack/unstract) for spec-grounded development approach
+- [Shuveb Hussain](https://github.com/shuveb) for inspiring builder culture
+- The **Saama AI** community for sparking the build momentum during the July meetup
+
+---
+
+## 🛤️ Roadmap
+
+- [x] Phase 1: Intent + Sentiment + API complete
+- [ ] Phase 2: Add summary generation with LLM
+- [ ] Phase 2: Interactive dashboard (e.g., Streamlit)
+- [ ] Phase 3: Add multi-language support (e.g., Tamil, Hindi)
+- [ ] Phase 4: Real-time audio ingestion + diarization
+
+---
+
+## 📬 Want to Collaborate or Contribute?
+
+Feel free to open an issue, drop feedback, or reach out on LinkedIn.  
+Together, we can make CallChemy an open blueprint for practical LLM apps in customer experience and QA.
