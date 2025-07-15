@@ -58,10 +58,13 @@
    - Efficient caching
    - Resource monitoring
 
-4. **Testing**
-   - High test coverage
-   - Mock LLM responses
+4. **Testing (TDD Approach)**
+   - Write tests first for each class/function
+   - Achieve 100% coverage before moving on
+   - Include unit, integration, and edge cases
+   - Mock external services (LLM APIs)
    - Performance benchmarks
+   - Test backward compatibility
 **Stack:** Python 3.11, FastAPI, Pydantic, pytest, basic NLP tools
 
 ---
