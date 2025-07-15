@@ -1,3 +1,4 @@
+![CallChemy Banner](docs/callchemy-banner.png)
 
 # 📞 CallChemy – AI-powered Call Summary and Quality Analyzer
 
