@@ -1,9 +1,10 @@
 
 # 🧩 CallChemy Prompt Plan  
-**Version:** v0.1  
+**Version:** v1.0  
 **Created:** 2025-07-13  
+**Updated:** 2025-07-15  
 **Owner:** Indumathi  
-**Stack:** Python 3.11, FastAPI, Pydantic, pytest, basic NLP tools
+**Stack:** Python 3.11, FastAPI, Pydantic v2, pytest, TextBlob, SpaCy
 
 ---
 
@@ -11,14 +12,13 @@
 
 | Step | Module / File         | Task Description                            | Status   |
 |------|------------------------|---------------------------------------------|----------|
-| 1    | ingestion.py           | Validate and parse input transcript JSON    | 🔜 Pending |
-| 2    | intent_classifier.py   | Classify intent from each utterance         | 🔜 Pending |
-| 3    | sentiment_analyzer.py  | Detect sentiment of customer utterances     | 🔜 Pending |
-| 4    | summary_generator.py   | Generate paragraph and bullet-point summary | 🔜 Pending |
-| 5    | keyword_extractor.py   | Extract key terms and entities              | 🔜 Pending |
-| 6    | response_formatter.py  | Combine module results into final response  | 🔜 Pending |
-| 7    | logger.py              | Log inputs/outputs to file system           | 🔜 Pending |
-| 8    | api/main.py            | Create FastAPI app with single endpoint     | 🔜 Pending |
+| 1    | ingestion.py           | Validate and parse input transcript JSON    | ✅ Done |
+| 2    | intent_classifier.py   | Classify intent from each utterance         | ✅ Done |
+| 3    | sentiment_analyzer.py  | Detect sentiment of customer utterances     | ✅ Done |
+| 4    | keyword_extractor.py   | Extract key terms and entities              | ✅ Done |
+| 5    | response_formatter.py  | Combine module results into final response  | ✅ Done |
+| 6    | logger.py              | Log inputs/outputs to file system           | ✅ Done |
+| 7    | api/main.py            | Create FastAPI app with endpoints           | ✅ Done |
 
 ---
 
